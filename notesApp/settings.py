@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-n=&+0)s$w(5%$u9g$@5w2mrtssp_hw=_)c2-l5&4w0%6%rlt##
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'mynotesappbackend.herokuapp.com/']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -63,7 +63,9 @@ ROOT_URLCONF = 'notesApp.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            BASE_DIR / 'frontEnd/build'
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -125,7 +127,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = 'staticfiles'
+STATICFILES_DIRS = [
+    BASE_DIR / 'frontEnd/build/static'
+]
 
 
 # Default primary key field type
